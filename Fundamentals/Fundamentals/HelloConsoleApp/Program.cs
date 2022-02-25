@@ -1,4 +1,6 @@
-﻿namespace HelloConsoleApp;
+﻿using HelloLibrary;
+
+namespace HelloConsoleApp;
 
 class Hello
 {
@@ -12,5 +14,9 @@ class Hello
 
         var username = args[1];
         Console.WriteLine($"Hello {username}");
+
+        var helloService = new HelloService();
+        var greeting = helloService.GetHelloString(username);
+        Console.WriteLine(greeting);
     }
 }

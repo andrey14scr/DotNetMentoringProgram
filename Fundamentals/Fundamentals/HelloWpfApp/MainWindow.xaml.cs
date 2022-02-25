@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using HelloLibrary;
+using System.Windows;
 
 namespace HelloWpfApp
 {
@@ -23,6 +24,10 @@ namespace HelloWpfApp
             }
 
             MessageBox.Show($"Hello {username}");
+
+            var helloService = new HelloService();
+            var greeting = helloService.GetHelloString(username);
+            MessageBox.Show(greeting);
         }
     }
 }

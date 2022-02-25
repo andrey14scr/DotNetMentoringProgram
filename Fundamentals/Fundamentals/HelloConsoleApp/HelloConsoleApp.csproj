@@ -7,4 +7,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="HelloLibrary">
+      <HintPath>..\HelloLibrary\bin\Debug\netstandard2.0\HelloLibrary.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
