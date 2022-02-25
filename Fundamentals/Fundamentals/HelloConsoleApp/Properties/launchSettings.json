@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "HelloConsoleApp": {
+      "commandName": "Project",
+      "commandLineArgs": "-username andrey"
+    }
+  }
+}
