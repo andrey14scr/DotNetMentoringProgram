@@ -10,7 +10,7 @@ public class Program
         const string root = "c:\\RootDirectoryToTest";
         if (!Directory.Exists(root))
         {
-            new TempFolderCreator().CreateForTest(root);
+            new TempFolderCreator().CreateForTest(root, 10);
         }
 
         var visitor = new FileSystemVisitor(root, (e1, e2) => string.Compare(e1.Name, e2.Name, StringComparison.Ordinal));

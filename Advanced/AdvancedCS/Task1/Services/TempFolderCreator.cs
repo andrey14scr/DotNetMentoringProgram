@@ -2,37 +2,38 @@
 
 public class TempFolderCreator
 {
-    public void CreateForTest(string root)
+    public string CreateForTest(string root, int count)
     {
-        var index = 0;
-        while (Directory.Exists(root))
-        {
-            index++;
-        }
+        var filesCount = 1;
+        var foldersCount = 1;
 
-        if (index != 0)
+        if (Directory.Exists(root))
         {
-            root += index;
+            root += "_Copy";
         }
 
         Directory.CreateDirectory(root);
+        var rand = new Random();
 
-        CreateTestFile(Path.Combine(root, "file1.txt"));
-        CreateTestFile(Path.Combine(root, "file2.txt"));
-        CreateTestFolder(Path.Combine(root, "folder1"));
-        CreateTestFile(Path.Combine(root, "file3.txt"));
-        CreateTestFolder(Path.Combine(root, "folder2"));
-        CreateTestFile(Path.Combine(root, "file4.txt"));
-        CreateTestFile(Path.Combine(root, "file5.txt"));
-        CreateTestFolder(Path.Combine(root, "folder3"));
-        CreateTestFolder(Path.Combine(root, "folder4"));
-        CreateTestFolder(Path.Combine(root, "folder5"));
+        for (var i = 0; i < count; i++)
+        {
+            if (rand.Next() % 2 == 0)
+            {
+                CreateTestFile(Path.Combine(root, $"file{filesCount++}.txt"));
+            }
+            else
+            {
+                CreateTestFolder(Path.Combine(root, $"folder{foldersCount++}"));
+            }
+        }
+
+        return root;
     }
 
     private static void CreateTestFile(string path)
     {
         Thread.Sleep(1000);
-        File.Create(path);
+        File.Create(path).Close();
         Console.WriteLine($"File {path} created.");
     }
 
