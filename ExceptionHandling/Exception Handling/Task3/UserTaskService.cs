@@ -1,9 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using Task3.DoNotChange;
 
 namespace Task3
 {
-    public class UserTaskService
+    public class UserTaskService : IUserTaskService
     {
         private readonly IUserDao _userDao;
 
@@ -12,25 +13,23 @@ namespace Task3
             _userDao = userDao;
         }
 
-        public int AddTaskForUser(int userId, UserTask task)
+        public void AddTaskForUser(int userId, UserTask task)
         {
             if (userId < 0)
-                return -1;
+                throw new IndexOutOfRangeException("Index was less than 0.");
 
             var user = _userDao.GetUser(userId);
             if (user == null)
-                return -2;
+                throw new KeyNotFoundException("User was not found.");
 
             var tasks = user.Tasks;
             foreach (var t in tasks)
             {
                 if (string.Equals(task.Description, t.Description, StringComparison.OrdinalIgnoreCase))
-                    return -3;
+                    throw new ArgumentException("The task already exists");
             }
 
             tasks.Add(task);
-
-            return 0;
         }
     }
 }
