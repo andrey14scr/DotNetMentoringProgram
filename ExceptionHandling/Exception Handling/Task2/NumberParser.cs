@@ -35,7 +35,7 @@ namespace Task2
 
             int next;
             var result = 0;
-            var wasSign = false;
+            var wasSign = false; 
 
             for (var i = start; i >= 0; i--)
             {
