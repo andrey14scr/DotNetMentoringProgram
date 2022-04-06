@@ -1,4 +1,4 @@
-﻿namespace Task1;
+﻿namespace ConfigurationComponent.Common;
 
 public enum Providers
 {

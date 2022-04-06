@@ -1,15 +1,16 @@
-﻿namespace Task1;
+﻿using ConfigurationComponent.Common;
+
+namespace Task1;
 
 public class Settings
 {
-
     [ConfigurationItem("appsettings.json", Providers.FileConfiguration)]
     public int? MaxConnections { get; set; }
 
-    [ConfigurationItem("Task1.dll.config", Providers.ConfigurationManager)]
+    [ConfigurationItem("some.config", Providers.ConfigurationManager)]
     public float? AverageSpeed { get; set; }
 
-    [ConfigurationItem("Task1.dll.config", Providers.ConfigurationManager)]
+    [ConfigurationItem("some.config", Providers.ConfigurationManager)]
     public string? Name { get; set; }
 
     [ConfigurationItem("appsettings.json", Providers.FileConfiguration)]

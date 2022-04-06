@@ -1,4 +1,4 @@
-﻿namespace Task1;
+﻿namespace ConfigurationComponent.Common;
 
 [AttributeUsage(AttributeTargets.Property)]
 public class ConfigurationItemAttribute : Attribute
