@@ -27,10 +27,10 @@ class Program
 
         var settings = new Settings
         {
-            AverageSpeed = 1000,
-            Name = "test name",
-            MaxConnections = 4,
-            Usage = new TimeSpan(5568),
+            AverageSpeed = 2222,
+            Name = "2222",
+            MaxConnections = 2222,
+            Usage = new TimeSpan(2222),
         };
 
         Console.WriteLine(settings.ToString());
