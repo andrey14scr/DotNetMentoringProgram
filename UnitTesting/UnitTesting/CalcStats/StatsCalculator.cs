@@ -6,26 +6,41 @@ public class StatsCalculator : IStats
 
     public StatsCalculator(int[] numbers)
     {
-        _numbers = numbers;
+        _numbers = numbers ?? throw new ArgumentNullException();
     }
 
     public int GetMinimum()
     {
-        throw new NotImplementedException();
+        if (_numbers.Length == 0)
+        {
+            throw new InvalidOperationException();
+        }
+
+        return _numbers.Min();
     }
 
     public int GetMaximum()
     {
-        throw new NotImplementedException();
+        if (_numbers.Length == 0)
+        {
+            throw new InvalidOperationException();
+        }
+
+        return _numbers.Max();
     }
 
     public int GetCount()
     {
-        throw new NotImplementedException();
+        return _numbers.Length;
     }
 
     public float GetAverage()
     {
-        throw new NotImplementedException();
+        if (_numbers.Length == 0)
+        {
+            throw new InvalidOperationException();
+        }
+
+        return (float)_numbers.Average();
     }
 }
