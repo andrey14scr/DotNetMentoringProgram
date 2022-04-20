@@ -17,7 +17,7 @@ public class CalcStatsTest
     [InlineData(new[] { 3, 3, 3 })]
     [InlineData(new[] { 4 })]
     [InlineData(new[] { 0 })]
-    public void ShouldGetMinimumValue(int[] numbers)
+    public void GetMin_PossibleData_ShouldGetMinimumValue(int[] numbers)
     {
         var calcStats = new StatsCalculator(numbers);
         var expectedResult = numbers.Min();
@@ -37,7 +37,7 @@ public class CalcStatsTest
     [InlineData(new[] { 3, 3, 3 })]
     [InlineData(new[] { 4 })]
     [InlineData(new[] { 0 })]
-    public void ShouldGetMaximumValue(int[] numbers)
+    public void GetMax_PossibleData_ShouldGetMaximumValue(int[] numbers)
     {
         var calcStats = new StatsCalculator(numbers);
         var expectedResult = numbers.Max();
@@ -54,7 +54,7 @@ public class CalcStatsTest
     [InlineData(new[] { 1 })]
     [InlineData(new[] { 0 })]
     [InlineData(new int[] { } )]
-    public void ShouldGetCountValue(int[] numbers)
+    public void GetCount_PossibleData_ShouldGetCountValue(int[] numbers)
     {
         var calcStats = new StatsCalculator(numbers);
         var expectedResult = numbers.Length;
@@ -74,7 +74,7 @@ public class CalcStatsTest
     [InlineData(new[] { 3, 3, 3 })]
     [InlineData(new[] { 4 })]
     [InlineData(new[] { 0 })]
-    public void ShouldGetAverageValue(int[] numbers)
+    public void GetAverage_PossibleData_ShouldGetAverageValue(int[] numbers)
     {
         var calcStats = new StatsCalculator(numbers);
         var expectedResult = (float)numbers.Average();
@@ -85,7 +85,7 @@ public class CalcStatsTest
     }
 
     [Fact]
-    public void Should_Throw_ArgumentNullException_If_Numbers_Are_Null()
+    public void Init_NullData_ShouldThrowArgumentNullException()
     {
         int[] data = null;
 
@@ -95,7 +95,7 @@ public class CalcStatsTest
     }
 
     [Fact]
-    public void GetMinimum_Should_Throw_InvalidOperationException_If_Numbers_Are_Empty()
+    public void GetMinimum_EmptyData_ShouldThrowInvalidOperationException()
     {
         var data = Array.Empty<int>();
         var calcStats = new StatsCalculator(data);
@@ -106,7 +106,7 @@ public class CalcStatsTest
     }
 
     [Fact]
-    public void GetMaximum_Should_Throw_InvalidOperationException_If_Numbers_Are_Empty()
+    public void GetMaximum_EmptyData_ShouldThrowInvalidOperationException()
     {
         var data = Array.Empty<int>();
         var calcStats = new StatsCalculator(data);
@@ -117,7 +117,7 @@ public class CalcStatsTest
     }
 
     [Fact]
-    public void GetAverage_Should_Throw_InvalidOperationException_If_Numbers_Are_Empty()
+    public void GetAverage_EmptyData_ShouldThrowInvalidOperationException()
     {
         var data = Array.Empty<int>();
         var calcStats = new StatsCalculator(data);

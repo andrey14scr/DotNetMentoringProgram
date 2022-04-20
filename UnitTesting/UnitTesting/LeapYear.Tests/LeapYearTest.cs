@@ -10,7 +10,7 @@ public class LeapYearTest
     [InlineData(1920)]
     [InlineData(2000)]
     [InlineData(1996)]
-    public void Should_Be_Leap(int year)
+    public void GetType_LeapYears_ShouldBeLeap(int year)
     {
         var yearsService = new YearsService();
 
@@ -23,7 +23,7 @@ public class LeapYearTest
     [InlineData(1900)]
     [InlineData(2001)]
     [InlineData(2019)]
-    public void Should_Be_Common(int year)
+    public void GetType_CommonYears_ShouldBeLeap(int year)
     {
         var yearsService = new YearsService();
 
@@ -35,7 +35,7 @@ public class LeapYearTest
     [Theory]
     [InlineData(-2001)]
     [InlineData(-100)]
-    public void Should_Throw_ArgumentOutOfRangeException_If_Year_Is_Negative(int year)
+    public void GetType_YearIsNegative_ShouldThrowArgumentOutOfRangeException(int year)
     {
         var yearsService = new YearsService();
 

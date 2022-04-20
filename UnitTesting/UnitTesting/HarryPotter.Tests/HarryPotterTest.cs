@@ -16,7 +16,7 @@ public class HarryPotterTest
     [InlineData(new[] { 2, 1, 1, 0, 0 }, 29.6)]
     [InlineData(new[] { 2, 2, 2, 1, 1 }, 51.6)]
     [InlineData(new[] { 5, 5, 4, 5, 4 }, 141.6)]
-    public void TestCost(int[] books, float expected)
+    public void GetCost_PossibleCombination_ShouldGetCost(int[] books, float expected)
     {
         var booksService = new BooksService();
 
@@ -26,7 +26,7 @@ public class HarryPotterTest
     }
 
     [Fact]
-    public void Should_Throw_ArgumentNullException_If_Books_Are_Null()
+    public void GetCost_NullData_ShouldThrowArgumentNullException()
     {
         int[] data = null;
         var booksService = new BooksService();
@@ -37,7 +37,7 @@ public class HarryPotterTest
     }
 
     [Fact]
-    public void Should_Throw_ArgumentOutOfRangeException_If_Books_Count_Is_More_Than_Five()
+    public void GetCost_TooBigData_ShouldThrowArgumentOutOfRangeException()
     {
         var data = new int[6];
         var booksService = new BooksService();
@@ -48,7 +48,7 @@ public class HarryPotterTest
     }
 
     [Fact]
-    public void Should_Throw_ArgumentOutOfRangeException_If_Books_Count_Is_Less_Than_Five()
+    public void GetCost_TooSmallData_ShouldThrowArgumentOutOfRangeException()
     {
         var data = new int[4];
         var booksService = new BooksService();
@@ -59,7 +59,7 @@ public class HarryPotterTest
     }
 
     [Fact]
-    public void Should_Throw_ArgumentException_If_Books_Count_Is_Negative()
+    public void GetCost_NegativeData_ShouldThrowArgumentException()
     {
         var data = new[] {1, -1, 1, -1, 1};
         var booksService = new BooksService();
