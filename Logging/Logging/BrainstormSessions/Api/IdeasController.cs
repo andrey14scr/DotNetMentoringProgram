@@ -6,6 +6,7 @@ using BrainstormSessions.ClientModels;
 using BrainstormSessions.Core.Interfaces;
 using BrainstormSessions.Core.Model;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 
 namespace BrainstormSessions.Api
 {
@@ -25,6 +26,7 @@ namespace BrainstormSessions.Api
             var session = await _sessionRepository.GetByIdAsync(sessionId);
             if (session == null)
             {
+                Log.Warning("Session was not found.");
                 return NotFound(sessionId);
             }
 
@@ -44,12 +46,14 @@ namespace BrainstormSessions.Api
         {
             if (!ModelState.IsValid)
             {
+                Log.Warning("Model state was invalid.");
                 return BadRequest(ModelState);
             }
 
             var session = await _sessionRepository.GetByIdAsync(model.SessionId);
             if (session == null)
             {
+                Log.Error("Session was not found.");
                 return NotFound(model.SessionId);
             }
 
@@ -77,6 +81,7 @@ namespace BrainstormSessions.Api
 
             if (session == null)
             {
+                Log.Error("Session was not found.");
                 return NotFound(sessionId);
             }
 
@@ -101,6 +106,7 @@ namespace BrainstormSessions.Api
         {
             if (!ModelState.IsValid)
             {
+                Log.Warning("Model state was invalid.");
                 return BadRequest(ModelState);
             }
 
@@ -108,6 +114,7 @@ namespace BrainstormSessions.Api
 
             if (session == null)
             {
+                Log.Error("Session was not found.");
                 return NotFound(model.SessionId);
             }
 
