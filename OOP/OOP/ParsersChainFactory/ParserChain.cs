@@ -9,8 +9,9 @@ public class ParserChain : IParserChain
         var patent = new PatentParser("patent", getFileInfo, number);
         var book = new BookParser("book", getFileInfo, number);
         var locBook = new LocalizedBookParser("localized book", getFileInfo, number);
+        var magazine = new MagazineParser("magazine", getFileInfo, number);
 
-        book.SetNext(patent).SetNext(locBook);
+        book.SetNext(patent).SetNext(locBook).SetNext(magazine);
 
         return book;
     }
