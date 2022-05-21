@@ -1,4 +1,5 @@
-﻿using System.Runtime.Serialization.Formatters.Binary;
+﻿#pragma warning disable SYSLIB0011
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace DeepCloning;
 

@@ -1,0 +1,8 @@
+{
+  "server": "smtp.gmail.com",
+  "port": "465",
+  "username": "andrey14scr@gmail.com",
+  "password": "111",
+  "to": "andrey14scr@gmail.com",
+  "subject": "Serilog"
+}
