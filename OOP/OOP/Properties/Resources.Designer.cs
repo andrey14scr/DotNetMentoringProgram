@@ -61,6 +61,42 @@ namespace FileCabinet.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to book.
+        /// </summary>
+        internal static string Book {
+            get {
+                return ResourceManager.GetString("Book", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to localized book.
+        /// </summary>
+        internal static string LocalizedBook {
+            get {
+                return ResourceManager.GetString("LocalizedBook", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to magazine.
+        /// </summary>
+        internal static string Magazine {
+            get {
+                return ResourceManager.GetString("Magazine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to patent.
+        /// </summary>
+        internal static string Patent {
+            get {
+                return ResourceManager.GetString("Patent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to C:\totest.
         /// </summary>
         internal static string RootFolder {

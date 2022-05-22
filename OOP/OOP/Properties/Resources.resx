@@ -117,6 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Book" xml:space="preserve">
+    <value>book</value>
+  </data>
+  <data name="LocalizedBook" xml:space="preserve">
+    <value>localized book</value>
+  </data>
+  <data name="Magazine" xml:space="preserve">
+    <value>magazine</value>
+  </data>
+  <data name="Patent" xml:space="preserve">
+    <value>patent</value>
+  </data>
   <data name="RootFolder" xml:space="preserve">
     <value>C:\totest</value>
   </data>

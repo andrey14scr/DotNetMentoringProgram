@@ -1,7 +1,5 @@
-﻿using System.Text.Json;
-using FileCabinet.CardsChainFactory;
+﻿using FileCabinet.CardsChainFactory;
 using FileCabinet.Finders;
-using FileCabinet.Models;
 using FileCabinet.Output;
 using FileCabinet.Printing;
 using FileCabinet.Properties;
@@ -12,7 +10,7 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        var number = 2;
+        var number = 1;
 
         var creator = new CardsServiceChainFactory();
         var infoService = creator.GetCardsServiceChain();
