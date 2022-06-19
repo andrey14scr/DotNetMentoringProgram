@@ -117,6 +117,27 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ClientErrorUrl" xml:space="preserve">
+    <value>ClientError</value>
+  </data>
+  <data name="InformationUrl" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="MyNameUrl" xml:space="preserve">
+    <value>MyName</value>
+  </data>
+  <data name="NotFound" xml:space="preserve">
+    <value>Not found</value>
+  </data>
+  <data name="RedirectionUrl" xml:space="preserve">
+    <value>Redirection</value>
+  </data>
+  <data name="ServerErrorUrl" xml:space="preserve">
+    <value>ServerError</value>
+  </data>
+  <data name="SuccessUrl" xml:space="preserve">
+    <value>Success</value>
+  </data>
   <data name="TestName" xml:space="preserve">
     <value>andrey_shcharbianok</value>
   </data>

@@ -1,4 +1,6 @@
-﻿namespace Client;
+﻿using Client.Properties;
+
+namespace Client;
 
 public class CustomClient
 {
@@ -11,7 +13,17 @@ public class CustomClient
 
     public async Task GetName(string name)
     {
-        var responseBody = await _httpClient.GetStringAsync($"http://localhost:8888/MyName/{name}");
-        Console.WriteLine(responseBody);
+        var response = await _httpClient.GetAsync($"http://localhost:8888/{Resources.MyNameUrl}/{name}");
+        var responseString = await response.Content.ReadAsStringAsync();
+        Console.WriteLine("Response: " + responseString);
+        Console.WriteLine("Code: " + response.StatusCode);
+    }
+
+    public async Task Get(string method)
+    {
+        var response = await _httpClient.GetAsync($"http://localhost:8888/{method}");
+        var responseString = await response.Content.ReadAsStringAsync();
+        Console.WriteLine("Response: " + responseString);
+        Console.WriteLine("Code: " + response.StatusCode);
     }
 }

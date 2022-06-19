@@ -61,6 +61,69 @@ namespace Client.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ClientError.
+        /// </summary>
+        internal static string ClientErrorUrl {
+            get {
+                return ResourceManager.GetString("ClientErrorUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Information.
+        /// </summary>
+        internal static string InformationUrl {
+            get {
+                return ResourceManager.GetString("InformationUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MyName.
+        /// </summary>
+        internal static string MyNameUrl {
+            get {
+                return ResourceManager.GetString("MyNameUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not found.
+        /// </summary>
+        internal static string NotFound {
+            get {
+                return ResourceManager.GetString("NotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Redirection.
+        /// </summary>
+        internal static string RedirectionUrl {
+            get {
+                return ResourceManager.GetString("RedirectionUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ServerError.
+        /// </summary>
+        internal static string ServerErrorUrl {
+            get {
+                return ResourceManager.GetString("ServerErrorUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Success.
+        /// </summary>
+        internal static string SuccessUrl {
+            get {
+                return ResourceManager.GetString("SuccessUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to andrey_shcharbianok.
         /// </summary>
         internal static string TestName {
