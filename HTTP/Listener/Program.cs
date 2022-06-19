@@ -47,9 +47,6 @@ string CreateResponse(string[] url, HttpListenerRequest request, HttpListenerRes
             response.StatusCode = 200;
             return name;
         }
-
-        response.StatusCode = 404;
-        return Resources.NotFound;
     }
     if (method.EqualsTo(Resources.MyNameByHeaderUrl))
     {
@@ -59,9 +56,15 @@ string CreateResponse(string[] url, HttpListenerRequest request, HttpListenerRes
             response.StatusCode = 200;
             return nameFromHeader;
         }
-
-        response.StatusCode = 404;
-        return Resources.NotFound;
+    }
+    if (method.EqualsTo(Resources.MyNameByCookiesUrl))
+    {
+        var nameFromCookie = GetMyNameByCookie(request);
+        if (nameFromCookie is not null)
+        {
+            response.StatusCode = 200;
+            return nameFromCookie;
+        }
     }
     if (method.EqualsTo(Resources.InformationUrl))
     {
@@ -96,4 +99,9 @@ string CreateResponse(string[] url, HttpListenerRequest request, HttpListenerRes
 string GetMyNameByHeader(HttpListenerRequest request)
 {
     return request.Headers.Get(Resources.NameHeader);
+}
+
+string GetMyNameByCookie(HttpListenerRequest request)
+{
+    return request.Cookies.FirstOrDefault(c => c.Name.EqualsTo("MyName"))?.Value;
 }

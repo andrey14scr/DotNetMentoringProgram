@@ -79,6 +79,15 @@ namespace Client.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to MyNameByCookies.
+        /// </summary>
+        internal static string MyNameByCookiesUrl {
+            get {
+                return ResourceManager.GetString("MyNameByCookiesUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to MyNameByHeader.
         /// </summary>
         internal static string MyNameByHeaderUrl {

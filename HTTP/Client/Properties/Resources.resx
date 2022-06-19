@@ -123,6 +123,9 @@
   <data name="InformationUrl" xml:space="preserve">
     <value>Information</value>
   </data>
+  <data name="MyNameByCookiesUrl" xml:space="preserve">
+    <value>MyNameByCookies</value>
+  </data>
   <data name="MyNameByHeaderUrl" xml:space="preserve">
     <value>MyNameByHeader</value>
   </data>
