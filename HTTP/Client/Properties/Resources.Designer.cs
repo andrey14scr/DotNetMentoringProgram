@@ -79,6 +79,15 @@ namespace Client.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to MyNameByHeader.
+        /// </summary>
+        internal static string MyNameByHeaderUrl {
+            get {
+                return ResourceManager.GetString("MyNameByHeaderUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to MyName.
         /// </summary>
         internal static string MyNameUrl {

@@ -123,8 +123,14 @@
   <data name="InformationUrl" xml:space="preserve">
     <value>Information</value>
   </data>
+  <data name="MyNameByHeaderUrl" xml:space="preserve">
+    <value>MyNameByHeader</value>
+  </data>
   <data name="MyNameUrl" xml:space="preserve">
     <value>MyName</value>
+  </data>
+  <data name="NameHeader" xml:space="preserve">
+    <value>X-MyName</value>
   </data>
   <data name="NotFound" xml:space="preserve">
     <value>Not found</value>

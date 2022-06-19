@@ -9,6 +9,7 @@ class Program
         var client = new CustomClient();
 
         await client.GetName(Resources.TestName);
+        await client.MyNameByHeader(Resources.TestName + "2");
 
         //await client.Get(Resources.InformationUrl);
         await client.Get(Resources.SuccessUrl);

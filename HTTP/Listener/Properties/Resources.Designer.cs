@@ -79,11 +79,29 @@ namespace Listener.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to MyNameByHeader.
+        /// </summary>
+        internal static string MyNameByHeaderUrl {
+            get {
+                return ResourceManager.GetString("MyNameByHeaderUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to MyName.
         /// </summary>
         internal static string MyNameUrl {
             get {
                 return ResourceManager.GetString("MyNameUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to X-MyName.
+        /// </summary>
+        internal static string NameHeader {
+            get {
+                return ResourceManager.GetString("NameHeader", resourceCulture);
             }
         }
         

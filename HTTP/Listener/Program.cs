@@ -14,7 +14,7 @@ while (true)
     var response = context.Response;
 
     var url = ParseRequest(request);
-    var responseString = CreateResponse(url, response);
+    var responseString = CreateResponse(url, request, response);
     var buffer = System.Text.Encoding.UTF8.GetBytes(responseString);
     response.ContentLength64 = buffer.Length;
 
@@ -35,15 +35,33 @@ string[] ParseRequest(HttpListenerRequest request)
     return url[1..];
 }
 
-string CreateResponse(string[] url, HttpListenerResponse response)
+string CreateResponse(string[] url, HttpListenerRequest request, HttpListenerResponse response)
 {
     var method = url[0];
 
     if (method.EqualsTo(Resources.MyNameUrl))
     {
-        var name = url[1];
-        response.StatusCode = 200;
-        return name;
+        if (url.Length > 1)
+        {
+            var name = url[1];
+            response.StatusCode = 200;
+            return name;
+        }
+
+        response.StatusCode = 404;
+        return Resources.NotFound;
+    }
+    if (method.EqualsTo(Resources.MyNameByHeaderUrl))
+    {
+        var nameFromHeader = GetMyNameByHeader(request);
+        if (nameFromHeader is not null)
+        {
+            response.StatusCode = 200;
+            return nameFromHeader;
+        }
+
+        response.StatusCode = 404;
+        return Resources.NotFound;
     }
     if (method.EqualsTo(Resources.InformationUrl))
     {
@@ -73,4 +91,9 @@ string CreateResponse(string[] url, HttpListenerResponse response)
 
     response.StatusCode = 404;
     return Resources.NotFound;
+}
+
+string GetMyNameByHeader(HttpListenerRequest request)
+{
+    return request.Headers.Get(Resources.NameHeader);
 }
