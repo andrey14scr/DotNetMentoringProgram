@@ -1,0 +1,15 @@
+﻿@model IEnumerable<MVCPrinciples.DAL.Models.Category>
+
+<table class="table table-bordered table-responsive table-hover">  
+    <tr>  
+        <th>CategoryId</th>  
+        <th>CategoryName</th>
+    </tr>  
+    @foreach (var category in Model)  
+    {  
+        <tr>
+            <td>@category.CategoryId</td>  
+            <td>@category.CategoryName</td>
+        </tr>  
+    }  
+</table>

@@ -1,0 +1,18 @@
+﻿@model IEnumerable<MVCPrinciples.DAL.Models.Product>
+
+<table class="table table-bordered table-responsive table-hover">  
+    <tr>  
+        <th>ProductId</th>  
+        <th>ProductName</th>
+    </tr>  
+    @foreach (var product in Model)  
+    {  
+        <tr>
+            <td>@product.ProductId <a asp-action="Update" asp-route-id="@product?.ProductId">Edit</a></td>  
+            <td>@product.ProductName</td>
+        </tr>  
+    }  
+</table>  
+
+@Html.ActionLink("More info", "Info", "Products")
+@Html.ActionLink("Create", "Create", "Products")
