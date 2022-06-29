@@ -20,9 +20,9 @@ public class ProductService : IProductService
     public async Task<ProductDto> Create(ProductDto entity)
     {
         var product = _mapper.Map<Product>(entity);
-        await _unitOfWork.ProductRepository.Create(product);
+        var newProduct = await _unitOfWork.ProductRepository.Create(product);
         await _unitOfWork.SaveChangesAsync();
-        return entity;
+        return _mapper.Map<ProductDto>(newProduct);
     }
 
     public async Task<ProductDto> GetById(int id)
@@ -48,9 +48,9 @@ public class ProductService : IProductService
     public async Task<ProductDto> Update(ProductDto entity)
     {
         var product = _mapper.Map<Product>(entity);
-        _unitOfWork.ProductRepository.Update(product);
+        var updatedProduct = _unitOfWork.ProductRepository.Update(product);
         await _unitOfWork.SaveChangesAsync();
-        return entity;
+        return _mapper.Map<ProductDto>(updatedProduct);
     }
 
     public async Task<IList<ProductDto>> GetAll(int page, int size, int? categoryId)

@@ -13,9 +13,10 @@ public class CategoryRepository : ICategoryRepository
         _northwindContext = northwindContext;
     }
 
-    public async Task Create(Category entity)
+    public async Task<Category> Create(Category entity)
     {
-        await _northwindContext.Categories.AddAsync(entity);
+        var category = await _northwindContext.Categories.AddAsync(entity);
+        return category.Entity;
     }
 
     public async Task<Category> GetById(int id)
@@ -33,8 +34,9 @@ public class CategoryRepository : ICategoryRepository
         _northwindContext.Categories.Remove(entity);
     }
 
-    public void Update(Category entity)
+    public Category Update(Category entity)
     {
-        _northwindContext.Categories.Update(entity);
+        var category = _northwindContext.Categories.Update(entity);
+        return category.Entity;
     }
 }

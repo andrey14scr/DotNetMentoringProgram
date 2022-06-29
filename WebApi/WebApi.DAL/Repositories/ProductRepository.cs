@@ -13,9 +13,10 @@ public class ProductRepository : IProductRepository
         _northwindContext = northwindContext;
     }
 
-    public async Task Create(Product entity)
+    public async Task<Product> Create(Product entity)
     {
-        await _northwindContext.Products.AddAsync(entity);
+        var product = await _northwindContext.Products.AddAsync(entity);
+        return product.Entity;
     }
 
     public async Task<Product> GetById(int id)
@@ -33,9 +34,10 @@ public class ProductRepository : IProductRepository
         _northwindContext.Products.Remove(entity);
     }
 
-    public void Update(Product entity)
+    public Product Update(Product entity)
     {
-        _northwindContext.Products.Update(entity);
+        var product = _northwindContext.Products.Update(entity);
+        return product.Entity;
     }
 
     public async Task<IList<Product>> GetPage(int page, int size, int? categoryId)

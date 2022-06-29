@@ -29,7 +29,7 @@ public class CategoriesController : ControllerBase
         return Ok(category);
     }
     
-    [HttpPut("{id}")]
+    [HttpPut]
     public async Task<ActionResult<CategoryDto>> PutCategory(CategoryDto categoryDto)
     {
         var category = await _categoryService.Update(categoryDto);
@@ -43,7 +43,7 @@ public class CategoriesController : ControllerBase
         return Ok(category);
     }
     
-    [HttpDelete("{id}")]
+    [HttpDelete]
     public async Task<IActionResult> DeleteCategory(CategoryDto categoryDto)
     {
         var category = await _categoryService.Delete(categoryDto);

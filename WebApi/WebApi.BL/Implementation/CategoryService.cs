@@ -20,9 +20,9 @@ public class CategoryService : ICategoryService
     public async Task<CategoryDto> Create(CategoryDto entity)
     {
         var category = _mapper.Map<Category>(entity);
-        await _unitOfWork.CategoryRepository.Create(category);
+        var newCategory = await _unitOfWork.CategoryRepository.Create(category);
         await _unitOfWork.SaveChangesAsync();
-        return entity;
+        return _mapper.Map<CategoryDto>(newCategory);
     }
 
     public async Task<CategoryDto> GetById(int id)
@@ -48,8 +48,8 @@ public class CategoryService : ICategoryService
     public async Task<CategoryDto> Update(CategoryDto entity)
     {
         var category = _mapper.Map<Category>(entity);
-        _unitOfWork.CategoryRepository.Update(category);
+        var updatedCategory = _unitOfWork.CategoryRepository.Update(category);
         await _unitOfWork.SaveChangesAsync();
-        return entity;
+        return _mapper.Map<CategoryDto>(updatedCategory);
     }
 }

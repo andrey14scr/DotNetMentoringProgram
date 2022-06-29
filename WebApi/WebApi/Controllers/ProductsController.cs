@@ -29,7 +29,7 @@ public class ProductsController : ControllerBase
         return Ok(product);
     }
 
-    [HttpPut("{id}")]
+    [HttpPut]
     public async Task<ActionResult<ProductDto>> PutProduct(ProductDto productDto)
     {
         var product = await _productService.Update(productDto);
@@ -43,7 +43,7 @@ public class ProductsController : ControllerBase
         return Ok(product);
     }
 
-    [HttpDelete("{id}")]
+    [HttpDelete]
     public async Task<IActionResult> DeleteProduct(ProductDto productDto)
     {
         var product = await _productService.Delete(productDto);
