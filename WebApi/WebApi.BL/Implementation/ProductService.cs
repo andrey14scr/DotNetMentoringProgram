@@ -52,4 +52,10 @@ public class ProductService : IProductService
         await _unitOfWork.SaveChangesAsync();
         return entity;
     }
+
+    public async Task<IList<ProductDto>> GetAll(int page, int size, int? categoryId)
+    {
+        var products = await _unitOfWork.ProductRepository.GetPage(page, size, categoryId);
+        return _mapper.Map<IList<ProductDto>>(products);
+    }
 }
