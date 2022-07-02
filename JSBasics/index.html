@@ -12,6 +12,21 @@
     // console.log(bananasOnlyString);
     // console.log(bananasOnlyUpperCaseString);
     alert(bananasOnlyUpperCaseString);
+
+    let cars = ['Saab', 'Volvo', 'BMW'];
+    console.log(...cars);
+    let bmw = cars[2];
+    console.log(bmw);
+    cars[0] = 'Toyota';
+    console.log(...cars);
+    cars.pop();
+    console.log(...cars);
+    cars.push('Audi');
+    console.log(...cars);
+    cars.splice(0, 0, 'Volvo');
+    console.log(...cars);
+    cars.splice(0, 0, 'BMW');
+    console.log(...cars);
 </script>
 
 </body>
